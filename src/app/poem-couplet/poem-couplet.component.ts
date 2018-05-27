@@ -1,17 +1,17 @@
 import { Component, OnInit, Input, ViewChild, ElementRef } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { RhymeService } from "./rhyme-service/rhyme.service";
+import { RhymeService } from './rhyme-service/rhyme.service';
 
 import 'rxjs/add/operator/debounceTime';
 import 'rxjs/add/operator/distinctUntilChanged';
 import 'rxjs/add/operator/do';
 import 'rxjs/add/operator/map';
 
-import { PoemCoupletFocusService } from "../shared/poem-couplet-focus.service";
-import { Stanza } from "../shared/stanza.model";
+import { PoemCoupletFocusService } from '../shared/poem-couplet-focus.service';
+import { Stanza } from '../shared/stanza.model';
 
 @Component({
-  selector: 'poem-couplet',
+  selector: 'app-poem-couplet',
   templateUrl: './poem-couplet.component.html',
   styleUrls: ['./poem-couplet.component.css']
 })
@@ -25,11 +25,11 @@ export class PoemCoupletComponent implements OnInit {
 
   private line1Input = new FormControl();
   private rhymeHints: string[] = [];
-  private isLoading: boolean = false;
-  private searchError: boolean = false;
+  private isLoading = false;
+  private searchError = false;
 
   public searchText: string = null;
-  public isFocused: boolean = false;
+  public isFocused = false;
 
   constructor(
     private rhymeService: RhymeService,
@@ -71,7 +71,7 @@ export class PoemCoupletComponent implements OnInit {
   }
 
   getLastWordInPhrase(phrase: string): string {
-    return phrase.trim().split(" ").pop().replace(/[?.,\/#!$%\^&\*;:{}=\-_`~()]/g, "");
+    return phrase.trim().split(' ').pop().replace(/[?.,\/#!$%\^&\*;:{}=\-_`~()]/g, '');
   }
 
   getRhymes(wordToRhyme: string): void {
@@ -82,7 +82,7 @@ export class PoemCoupletComponent implements OnInit {
         this.updateRhymeHints(response);
       }, (error) => {
         this.onRhymeHintsFail(error);
-      })
+      });
   }
 
   updateRhymeHints(hints: string[]): void {
@@ -110,11 +110,11 @@ export class PoemCoupletComponent implements OnInit {
 
   setFocus(): void {
     if (this.coupletInput1) {
-      this.coupletInput1.nativeElement.focus()
+      this.coupletInput1.nativeElement.focus();
     } else {
       // If this couplet is new and hasn't had time to render, set a small
       // delay to give it time to render before setting focus to the input.
-      setTimeout(() => { this.coupletInput1.nativeElement.focus() }, 10);
+      setTimeout(() => { this.coupletInput1.nativeElement.focus(); }, 10);
     }
   }
 

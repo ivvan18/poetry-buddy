@@ -1,8 +1,8 @@
-import { Component, Input, SimpleChanges, ViewChild, Output, EventEmitter } from '@angular/core';
-import { SwalComponent } from "@toverux/ngsweetalert2/dist/types+es2015-modules";
+import { Component, Input, ViewChild, Output, EventEmitter } from '@angular/core';
+import { SwalComponent } from '@toverux/ngsweetalert2/dist/types+es2015-modules';
 
 @Component({
-  selector: 'clipboard-button',
+  selector: 'app-clipboard-button',
   templateUrl: './clipboard-button.component.html'
 })
 
@@ -12,7 +12,7 @@ export class ClipboardButtonComponent {
   @Input() poem: any[];
   @Output() showText: EventEmitter<any> = new EventEmitter();
 
-  public poemText: string = "";
+  public poemText = '';
 
   constructor() { }
 
@@ -21,11 +21,11 @@ export class ClipboardButtonComponent {
   }
 
   convertPoemToText(poem): string {
-    let poemText = ""
+    let poemText = '';
     this.poem.forEach((couplet) => {
-      poemText += couplet.line1 + "\n";
-      poemText += couplet.line2 + "\n";
-    })
+      poemText += couplet.line1 + '\n';
+      poemText += couplet.line2 + '\n';
+    });
     return poemText;
   }
 

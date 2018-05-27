@@ -7,11 +7,11 @@ import {
   Output,
   EventEmitter
 } from '@angular/core';
-import { SwalComponent } from "@toverux/ngsweetalert2/dist/types+es2015-modules";
+import { SwalComponent } from '@toverux/ngsweetalert2/dist/types+es2015-modules';
 
 @Component({
   moduleId: module.id,
-  selector: 'rhyme-suggestion',
+  selector: 'app-rhyme-suggestion',
   templateUrl: 'rhyme-suggestion.component.html',
   styleUrls: ['./rhyme-suggestion.component.css']
 })

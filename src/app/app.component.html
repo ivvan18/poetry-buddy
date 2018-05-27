@@ -8,12 +8,12 @@
 
 <section id="writing-space">
 
-  <poem-couplet *ngFor="let stanza of poem; let i = index" 
-      [coupletLines]="stanza" 
-      [showText]="showText" 
+  <app-poem-couplet *ngFor="let stanza of poem; let i = index"
+      [coupletLines]="stanza"
+      [showText]="showText"
       [coupletIndex]="i">
-  </poem-couplet>
-  
+  </app-poem-couplet>
+
 </section>
 
 <section id="button-container">
@@ -22,11 +22,11 @@
     <i class="fa fa-plus"></i> Add More Lines
   </button>
 
-  <clipboard-button *ngIf="!showText" 
-      [poem]="poem" 
+  <app-clipboard-button *ngIf="!showText"
+      [poem]="poem"
       (showText)="onShowText()">
-  </clipboard-button>
-  
+  </app-clipboard-button>
+
   <button *ngIf="showText" (click)="toggleShowText()">
     <i class="fa fa-edit"></i>  Back To Edit
   </button>

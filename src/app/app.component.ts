@@ -1,6 +1,6 @@
-import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
+import {Component, OnInit, ViewEncapsulation} from '@angular/core';
 import { PoemCoupletFocusService } from './shared/poem-couplet-focus.service';
-import { Stanza } from './shared/stanza.model'
+import { Stanza } from './shared/stanza.model';
 
 @Component({
   selector: 'app-root',
@@ -9,16 +9,15 @@ import { Stanza } from './shared/stanza.model'
   encapsulation: ViewEncapsulation.None
 })
 
-export class AppComponent {
-  showText: boolean = false;
-  currentWord: boolean = null;
+export class AppComponent implements OnInit{
+  showText = false;
   poem: Stanza[] = [
     {
-      type: "couplet",
-      line1: "",
-      line2: ""
+      type: 'couplet',
+      line1: '',
+      line2: ''
     }
-  ]
+  ];
 
   constructor(
     private focusService: PoemCoupletFocusService
@@ -38,16 +37,16 @@ export class AppComponent {
   }
 
   addCouplet() {
-    let newCouplet = this.createNewCouplet()
+    const newCouplet = this.createNewCouplet();
     this.poem.push(newCouplet);
   }
 
   createNewCouplet(): Stanza {
-    let newCouplet: Stanza = {
-      type: "couplet",
-      line1: "",
-      line2: ""
-    }
+    const newCouplet: Stanza = {
+      type: 'couplet',
+      line1: '',
+      line2: ''
+    };
     return newCouplet;
   }
 
