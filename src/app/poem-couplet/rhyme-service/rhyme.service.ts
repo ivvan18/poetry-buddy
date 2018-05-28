@@ -42,7 +42,7 @@ export class RhymeService {
     }
   }
 
-  pushWordToCache(word: string, rhymes: string[]) : void {
+  pushWordToCache(word: string, rhymes: string[]): void {
     this.cacheIndex.push(word);
     this.rhymeCache[word] = rhymes;
   }

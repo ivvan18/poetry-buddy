@@ -13,7 +13,7 @@ import { AppComponent } from './app.component';
 import { ClipboardButtonComponent } from './clipboard-button/clipboard-button.component';
 import { PoemCoupletComponent } from './poem-couplet/poem-couplet.component';
 import { PoemCoupletFocusService } from './shared/poem-couplet-focus.service';
-import { RhymeService } from "./poem-couplet/rhyme-service/rhyme.service";
+import { RhymeService } from './poem-couplet/rhyme-service/rhyme.service';
 import { RhymeSuggestionComponent } from './poem-couplet/rhyme-suggestion/rhyme-suggestion.component';
 
 
