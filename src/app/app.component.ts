@@ -9,7 +9,7 @@ import { Stanza } from './shared/stanza.model';
   encapsulation: ViewEncapsulation.None
 })
 
-export class AppComponent implements OnInit{
+export class AppComponent implements OnInit {
   showText = false;
   poem: Stanza[] = [
     {
@@ -50,15 +50,11 @@ export class AppComponent implements OnInit{
     return newCouplet;
   }
 
-  toggleShowText(): void {
-    if (this.showText) {
-      this.showText = false;
-    } else {
-      this.showText = true;
-    }
+  toggleShowText() {
+    this.showText = !this.showText;
   }
 
-  onShowText(): void {
+  onShowText() {
     this.showText = true;
   }
 

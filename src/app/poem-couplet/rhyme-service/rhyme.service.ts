@@ -23,13 +23,14 @@ export class RhymeService {
 
     const rhymeUrl = `https://api.datamuse.com/words?rel_rhy=${word}`;
 
-    return this.http.get(rhymeUrl).map(response => {
-      const rhymes = response.json().map((rhyme) => {
-        return rhyme.word;
+    return this.http.get(rhymeUrl)
+      .map(response => {
+        const rhymes = response.json().map((rhyme) => {
+          return rhyme.word;
+        });
+        this.updateRhymeCache(word, rhymes);
+        return <string[]>rhymes;
       });
-      this.updateRhymeCache(word, rhymes);
-      return <string[]>rhymes;
-    });
   }
 
   updateRhymeCache(word: string, rhymes: string[]): void {

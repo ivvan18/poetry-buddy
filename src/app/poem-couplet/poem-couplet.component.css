@@ -23,42 +23,42 @@ input:focus {
 }
 
 input::-webkit-input-placeholder /* WebKit, Blink, Edge */
-{ 
+{
   color:    #fff;
   opacity:  0.5;
 }
 input:-moz-placeholder /* Mozilla Firefox 4 to 18 */
-{ 
+{
   color:    #fff;
   opacity:  0.5;
 }
 input::-moz-placeholder /* Mozilla Firefox 19+ */
-{ 
+{
   color:    #fff;
   opacity:  0.5;
 }
 input:-ms-input-placeholder /* Internet Explorer 10-11 */
-{ 
+{
   color:    #fff;
   opacity:  0.5;
 }
 input:focus::-webkit-input-placeholder /* WebKit, Blink, Edge */
-{ 
+{
   color:    #fff;
   opacity:  0.5;
 }
 input:focus:-moz-placeholder /* Mozilla Firefox 4 to 18 */
-{ 
+{
   color:    #fff;
   opacity:  0.5;
 }
 input:focus::-moz-placeholder /* Mozilla Firefox 19+ */
-{ 
+{
   color:    #fff;
   opacity:  0.5;
 }
 input:focus:-ms-input-placeholder /* Internet Explorer 10-11 */
-{ 
+{
   color:    #fff;
   opacity:  0.5;
 }
@@ -108,5 +108,4 @@ input:focus:-ms-input-placeholder /* Internet Explorer 10-11 */
     background: #719ECE;
     color: #eee;
   }
-
 }

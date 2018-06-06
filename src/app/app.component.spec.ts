@@ -4,11 +4,11 @@ import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 
-import { RhymeService } from "./poem-couplet/rhyme-service/rhyme.service";
+import { RhymeService } from './poem-couplet/rhyme-service/rhyme.service';
 import { PoemCoupletFocusService } from './shared/poem-couplet-focus.service';
-import { Subscription } from "rxjs/Subscription";
-import { Observable } from "rxjs/Observable";
-import { ComponentFixture } from "@angular/core/testing";
+import { Subscription } from 'rxjs/Subscription';
+import { Observable } from 'rxjs/Observable';
+import { ComponentFixture } from '@angular/core/testing';
 
 /* Stub out the required services for testing */
 const rhymeServiceStub = {
@@ -56,32 +56,32 @@ describe('AppComponent', () => {
   it('should show a poem-couplet component for every stanza', () => {
     component.poem = [
       {
-        type: "couplet",
-        line1: "",
-        line2: ""
+        type: 'couplet',
+        line1: '',
+        line2: ''
       },
       {
-        type: "couplet",
-        line1: "",
-        line2: ""
+        type: 'couplet',
+        line1: '',
+        line2: ''
       },
       {
-        type: "couplet",
-        line1: "",
-        line2: ""
+        type: 'couplet',
+        line1: '',
+        line2: ''
       }
-    ]
+    ];
     fixture.detectChanges();
 
-    let coupletCount = fixture.debugElement.nativeElement.querySelectorAll('poem-couplet').length
+    const coupletCount = fixture.debugElement.nativeElement.querySelectorAll('app-poem-couplet').length;
     expect(coupletCount).toBe(3);
   });
 
   it('should create a new empty stanza properly when asked', () => {
-    let stanza = component.createNewCouplet();
-    expect(stanza.line1).toBe("");
-    expect(stanza.line2).toBe("");
-    expect(stanza.type).toBe("couplet");
+    const stanza = component.createNewCouplet();
+    expect(stanza.line1).toBe('');
+    expect(stanza.line2).toBe('');
+    expect(stanza.type).toBe('couplet');
   });
 
 });

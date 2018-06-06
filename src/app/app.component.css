@@ -58,7 +58,7 @@ button:hover{
   text-align:center;
 }
 
-/* 
+/*
 Used to hide content from regular users but remain for screen readers.
 Poetry Buddy's form inputs labels are hidden this way.
 From webaim.org.
